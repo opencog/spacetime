@@ -9,11 +9,15 @@
 # -- print pretty summary
 #
 
-CMAKE_MINIMUM_REQUIRED(VERSION 3.0.2)
+# cogutils already requires 2.8.12.2, so may as well ask for that.
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.12.2)
 IF (COMMAND CMAKE_POLICY)
 	CMAKE_POLICY(SET CMP0003 NEW)
-	CMAKE_POLICY(SET CMP0037 OLD)
 ENDIF (COMMAND CMAKE_POLICY)
+
+IF(CMAKE_VERSION VERSION_GREATER 3.0.2)
+	CMAKE_POLICY(SET CMP0037 OLD)
+ENDIF(CMAKE_VERSION VERSION_GREATER 3.0.2)
 
 PROJECT(spacetime)
 
@@ -117,6 +121,7 @@ ENDIF (COGUTIL_FOUND)
 list(APPEND CMAKE_MODULE_PATH  ${COGUTIL_DATA_DIR}/cmake)
 
 include(${COGUTIL_DATA_DIR}/cmake/Summary.cmake)
+include(${COGUTIL_DATA_DIR}/cmake/AddCxxtest.cmake)
 
 # ===================================================================
 # Check for existance of various required, optional packages.
@@ -284,8 +289,6 @@ IF (CXXTEST_FOUND)
 		)
 	ENDIF (CMAKE_BUILD_TYPE STREQUAL "Coverage")
 ENDIF (CXXTEST_FOUND)
-
-ADD_SUBDIRECTORY(examples EXCLUDE_FROM_ALL)
 
 ADD_CUSTOM_TARGET(cscope
 	COMMAND find opencog examples tests -name '*.cc' -o -name '*.h' -o -name '*.cxxtest' -o -name '*.scm' > ${CMAKE_SOURCE_DIR}/cscope.files
