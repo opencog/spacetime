@@ -1,2 +1,4 @@
+ENABLE_TESTING()
+INCLUDE(AddCxxtest)
 
 ADD_SUBDIRECTORY (spacetime)

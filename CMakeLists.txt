@@ -121,7 +121,6 @@ ENDIF (COGUTIL_FOUND)
 list(APPEND CMAKE_MODULE_PATH  ${COGUTIL_DATA_DIR}/cmake)
 
 include(${COGUTIL_DATA_DIR}/cmake/Summary.cmake)
-include(${COGUTIL_DATA_DIR}/cmake/AddCxxtest.cmake)
 
 # ===================================================================
 # Check for existance of various required, optional packages.
