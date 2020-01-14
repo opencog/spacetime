@@ -44,17 +44,6 @@ OctoMapNode::OctoMapNode(const std::string& name, TimeOctomapPtr ocmap) : Node(O
   octomapPtr = ocmap;
 }
 
-OctoMapNode::OctoMapNode(const Node& n)
-    : Node(n)
-{
-    Type tocnode = n.get_type();
-    if (not nameserver().isA(tocnode, OCTOMAP_NODE)) {
-        const std::string& tname = nameserver().getTypeName(tocnode);
-        throw InvalidParamException(TRACE_INFO,
-                                    "Expecting an OctoMapNode, got %s", tname.c_str());
-    }
-}
-
 OctoMapNode::~OctoMapNode()
 {
 }

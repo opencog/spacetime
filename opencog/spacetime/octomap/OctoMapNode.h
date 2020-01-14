@@ -56,7 +56,6 @@ protected:
 public:
     OctoMapNode(Type t, const std::string&);
     OctoMapNode(const std::string&, TimeOctomapPtr);
-    OctoMapNode(const Node&);
     virtual ~OctoMapNode();
 
     inline TimeOctomapPtr get_map(void)
