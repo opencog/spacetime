@@ -61,5 +61,5 @@ INSTALL (FILES
 	AtomOcTree.h
 	AtomOcTreeNode.h
 	TimeOctomap.h
-	DESTINATION "include/${PROJECT_NAME}/spacetime/octomap"
+	DESTINATION "include/opencog/${PROJECT_NAME}/octomap"
 )
