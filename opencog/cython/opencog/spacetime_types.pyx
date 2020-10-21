@@ -7,4 +7,4 @@ cdef extern :
 spacetime_types_init()
 types = get_refreshed_types()
 
-include "opencog/spacetime/types/spacetime_types.pyx"
+include "opencog/spacetime/atom-types/spacetime_types.pyx"
