@@ -128,7 +128,7 @@ IF(OCTOMAP_FOUND AND OCTOMAP_LIBRARY)
   INCLUDE_DIRECTORIES(${OCTOMAP_INCLUDE_DIR})
   SET(OCTOMAP_DIR_MESSAGE "Octomap was found.")
 ELSE (OCTOMAP_FOUND AND OCTOMAP_LIBRARY)
-  SET(OCTOMAP_DIR_MESSAGE "Octomap missing: needed for the SpaceTime map.")
+  MESSAGE(FATAL_ERROR "Octomap missing: needed for the SpaceTime map.")
 ENDIF(OCTOMAP_FOUND AND OCTOMAP_LIBRARY)
 
 # ===================================================================
