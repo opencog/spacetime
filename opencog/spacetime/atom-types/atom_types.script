@@ -3,54 +3,45 @@
 //
 
 // ====================================================================
-// SpaceServer atoms
-// XXX Review. Are any of these acutally used?
-SPACE_MAP_NODE <- NODE
-OBJECT_NODE <- NODE
-BLOCK_ENTITY_NODE <- OBJECT_NODE
-ENTITY_NODE <- OBJECT_NODE
-STRUCTURE_NODE <- OBJECT_NODE
-IMAGINARY_STRUCTURE_NODE <- OBJECT_NODE
-AT_LOCATION_LINK <- ORDERED_LINK
-
 // Time-related atoms
-// TimeNode inherits from NumerNode, so that a umeric value can be
+// TimeNode inherits from NumerNode, so that a numeric value can be
 // directly stored (wihout converting it to a string)
 TIME_NODE <- NUMBER_NODE
-TIME_INTERVAL_LINK <- ORDERED_LINK
-TIME_DOMAIN_NODE <- NODE
 AT_TIME_LINK <- ORDERED_LINK
-LATEST_LINK <- ORDERED_LINK
+AT_LOCATION_LINK <- ORDERED_LINK
+
+// ====================================================================
+// SpaceServer atoms
+// None of these are used anywhere, by anyone any more.
+// They are commented out below only so that you can find them
+// with a search-engine, if need be.
+// If you need one of these types in your code, you should define
+// it in your code, and not here!
+
+// SPACE_MAP_NODE <- NODE
+// OBJECT_NODE <- NODE
+// BLOCK_ENTITY_NODE <- OBJECT_NODE
+// ENTITY_NODE <- OBJECT_NODE
+// STRUCTURE_NODE <- OBJECT_NODE
+// IMAGINARY_STRUCTURE_NODE <- OBJECT_NODE
+
+// TIME_INTERVAL_LINK <- ORDERED_LINK
+// TIME_DOMAIN_NODE <- NODE
+// LATEST_LINK <- ORDERED_LINK
 
 // ====================================================================
 // Allen Interval algebra links
 
-// XXX TODO Perhaps "overlaps", "equals" and "contains" should be renamed
-// to make it clear that these apply to time intervals, only.
-BEFORE_LINK <- ORDERED_LINK
-OVERLAPS_LINK <- ORDERED_LINK
-DURING_LINK <- ORDERED_LINK
-MEETS_LINK <- ORDERED_LINK
-STARTS_LINK <- ORDERED_LINK
-FINISHES_LINK <- ORDERED_LINK
-EQUALS_LINK <- ORDERED_LINK
-AFTER_LINK <- ORDERED_LINK
-OVERLAPPED_BY_LINK <- ORDERED_LINK
-CONTAINS_LINK <- ORDERED_LINK
-MET_BY_LINK <- ORDERED_LINK
-STARTED_BY_LINK <- ORDERED_LINK
-FINISHED_BY_LINK <- ORDERED_LINK
-
-//
-// Other atom types for temporal representation and reasoning.
-//
-// TODO XXX: Review, and see if these are acutally being used.
-//
-PREDICTIVE_IMPLICATION_LINK <- ORDERED_LINK
-TAIL_PREDICTIVE_IMPLICATION_LINK <- ORDERED_LINK
-
-PREDICTIVE_ATTRACTION_LINK <- ORDERED_LINK
-SIMULTANEOUS_AND_LINK <- ORDERED_LINK //AND_LINK
-
-EVENTUAL_SEQUENTIAL_AND_LINK <- SEQUENTIAL_AND_LINK "EventualSequentialAND"
-EVENTUAL_PREDICTIVE_IMPLICATION_LINK <- ORDERED_LINK "EventualSequentialImplication"
+// TIME_INTERVAL_BEFORE_LINK <- ORDERED_LINK
+// TIME_INTERVAL_OVERLAPS_LINK <- ORDERED_LINK
+// TIME_INTERVAL_DURING_LINK <- ORDERED_LINK
+// TIME_INTERVAL_MEETS_LINK <- ORDERED_LINK
+// TIME_INTERVAL_STARTS_LINK <- ORDERED_LINK
+// TIME_INTERVAL_FINISHES_LINK <- ORDERED_LINK
+// TIME_INTERVAL_EQUALS_LINK <- ORDERED_LINK
+// TIME_INTERVAL_AFTER_LINK <- ORDERED_LINK
+// TIME_INTERVAL_OVERLAPPED_BY_LINK <- ORDERED_LINK
+// TIME_INTERVAL_CONTAINS_LINK <- ORDERED_LINK
+// TIME_INTERVAL_MET_BY_LINK <- ORDERED_LINK
+// TIME_INTERVAL_STARTED_BY_LINK <- ORDERED_LINK
+// TIME_INTERVAL_FINISHED_BY_LINK <- ORDERED_LINK
