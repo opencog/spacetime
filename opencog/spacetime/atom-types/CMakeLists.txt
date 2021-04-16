@@ -20,6 +20,12 @@ INSTALL (TARGETS spacetime-types
 	LIBRARY DESTINATION "lib${LIB_DIR_SUFFIX}/opencog"
 )
 
+INSTALL (FILES
+   ${CMAKE_CURRENT_BINARY_DIR}/atom_types.h
+   ${CMAKE_CURRENT_BINARY_DIR}/atom_names.h
+   DESTINATION "include/opencog/spacetime/types"
+)
+
 ADD_GUILE_EXTENSION(SCM_CONFIG spacetime-types "opencog-ext-path-spacetime-types")
 
 ADD_GUILE_MODULE (FILES
