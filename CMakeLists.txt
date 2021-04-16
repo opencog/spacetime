@@ -152,8 +152,10 @@ INCLUDE(OpenCogCython)
 
 # ==========================================================
 # Decide what to build, based on the packages found.
+SET(SEMANTIC_VERSION 0.1.4)
 
 ADD_SUBDIRECTORY(opencog)
+ADD_SUBDIRECTORY(lib)
 
 IF (CXXTEST_FOUND)
 	ADD_CUSTOM_TARGET(tests)
@@ -211,7 +213,6 @@ STRING(TIMESTAMP UTC_DATE %Y%m%d UTC)
 FILE(WRITE "${PROJECT_BINARY_DIR}/install_manifest.txt")
 ## It doesn't have a header-file declaring the version similar to cogutil and
 ## atomspace.
-SET(SEMANTIC_VERSION 0.1.4)
 
 ## Cpack configuration
 SET(CPACK_GENERATOR "DEB")

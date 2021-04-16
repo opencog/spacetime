@@ -16,7 +16,7 @@ TARGET_LINK_LIBRARIES(spacetime-types
 
 ADD_DEPENDENCIES(spacetime-types spacetime_atom_types)
 
-INSTALL (TARGETS spacetime-types
+INSTALL (TARGETS spacetime-types EXPORT SpaceTimeTargets
 	LIBRARY DESTINATION "lib${LIB_DIR_SUFFIX}/opencog"
 )
 

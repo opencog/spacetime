@@ -1,0 +1,10 @@
+@PACKAGE_INIT@
+
+include("@CMAKE_INSTALL_PREFIX@/lib/cmake/AtomSpace/SpaceTimeTargets.cmake")
+
+set(SPACETIME_LIBRARIES
+	spacetime-types
+)
+
+set(SPACETIME_INCLUDE_DIR "@CMAKE_INSTALL_PREFIX@/include/")
+set(SPACETIME_FOUND 1)
