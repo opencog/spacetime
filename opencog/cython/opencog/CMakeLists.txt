@@ -45,6 +45,7 @@ ADD_LIBRARY(spacetime_cython SHARED
 ADD_DEPENDENCIES(spacetime_cython spacetime-types)
 
 TARGET_LINK_LIBRARIES(spacetime_cython
+	${NO_AS_NEEDED}
 	spacetime-types
 	${ATOMSPACE_LIBRARIES}
 	${PYTHON_LIBRARIES}
