@@ -1,6 +1,9 @@
 
 SpaceTime Server
 ================
+opencog
+-------
+[![CircleCI](https://circleci.com/gh/opencog/spacetime.svg?style=svg)](https://circleci.com/gh/opencog/spacetime)
 
 This code is part of a spatial-information processing system, described
 here: https://wiki.opencog.org/w/SpaceServer
