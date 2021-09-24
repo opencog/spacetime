@@ -39,6 +39,12 @@ public:
     AtomOcTreeNode(const AtomOcTreeNode<T>& rhs) : OcTreeNode(rhs), dat(rhs.dat)
     {}
 
+    ~AtomOcTreeNode()
+    {
+        delete[] children;
+        children = nullptr;
+    }
+
     bool operator==(const AtomOcTreeNode<T>& rhs) const
     {
         return (rhs.value == value && rhs.dat == dat);
