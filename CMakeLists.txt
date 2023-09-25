@@ -10,11 +10,7 @@
 #
 
 # cogutils already requires 3.12, so may as well ask for that.
-CMAKE_MINIMUM_REQUIRED(VERSION 2.12)
-
-IF(CMAKE_VERSION VERSION_GREATER 3.0.2)
-	CMAKE_POLICY(SET CMP0037 OLD)
-ENDIF(CMAKE_VERSION VERSION_GREATER 3.0.2)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.12)
 
 PROJECT(spacetime)
 
@@ -186,11 +182,6 @@ IF (CXXTEST_FOUND)
 			COMMENT "Running tests..."
 		)
 	ENDIF (CMAKE_BUILD_TYPE STREQUAL "Coverage")
-
-	# When CMP00037 is finally turned off, just remove these two lines.
-	ADD_CUSTOM_TARGET(test)
-	ADD_DEPENDENCIES(test check)
-
 ENDIF (CXXTEST_FOUND)
 
 ADD_CUSTOM_TARGET(cscope
