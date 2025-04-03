@@ -52,6 +52,23 @@ jobs:
           key: haskelldeps-{{checksum "/ws/atomspace/opencog/haskell/stack.yaml"}}-{{checksum "/ws/atomspace/opencog/haskell/opencog-atomspace.cabal"}}-{{ arch }}
           paths:
             - /ws/atomspace/opencog/haskell/.stack-work
+
+      # The checkout directive only works if there is a deploy key
+      # configured in github. Most repos have this, but some do not.
+      # Work around this by doing the clone manually. This is all
+      # read-only anyway, so I have no clue why the special key was
+      # needed.
+      #
+      # Without the deploy key, one gets the cryptic error message
+      # Either git or ssh (required by git to clone through SSH) is Not Installed in the Image
+      # apt-get installing openssh-client says 'access denied', which
+      # tells us that the deploy key is missing.
+      #
+      # - checkout
+      - run:
+          command: |
+            git clone --depth 1 https://github.com/$CIRCLE_PROJECT_USERNAME/spacetime /ws/spacetime
+
       - checkout
       - run:
           name: CMake Configure
